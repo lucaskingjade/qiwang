@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qi Wang - Researcher</title>
+    <title>Qi Wang - Researcher in Generative AI & Computer Vision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,231 +14,643 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --bg: #ffffff;
+            --bg-secondary: #f9fafb;
+            --border: #e5e7eb;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f7fa;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg-secondary);
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 0 24px;
         }
 
-        header {
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 16px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 60px 0;
-            text-align: center;
-            margin-bottom: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
-            border: 4px solid white;
-            margin-bottom: 20px;
-            background: rgba(255,255,255,0.2);
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.15);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 48px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 72px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
         }
 
-        .title {
-            font-size: 1.2em;
+        .hero-title {
+            font-size: 1.35rem;
+            opacity: 0.95;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .hero-affiliation {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-bottom: 28px;
+        }
+
+        .hero-bio {
+            font-size: 1.05rem;
             opacity: 0.9;
-            margin-bottom: 20px;
+            line-height: 1.8;
+            margin-bottom: 32px;
         }
 
-        .social-links {
+        .hero-links {
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            gap: 16px;
             flex-wrap: wrap;
         }
 
-        .social-links a {
+        .hero-links a {
             color: white;
             text-decoration: none;
-            padding: 8px 16px;
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 20px;
+            padding: 12px 24px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
             transition: all 0.3s;
         }
 
-        .social-links a:hover {
-            background: rgba(255,255,255,0.2);
-        }
-
-        .section {
+        .hero-links a:hover {
             background: white;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            color: var(--primary);
+            transform: translateY(-2px);
         }
 
-        .section h2 {
-            color: #667eea;
+        /* Sections */
+        .section {
+            padding: 70px 0;
+        }
+
+        .section:nth-child(even) {
+            background: var(--bg);
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            color: var(--text);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 48px;
+        }
+
+        .about-text p {
             margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #f0f0f0;
+            font-size: 1.05rem;
+            line-height: 1.8;
         }
 
-        .interests {
+        .about-highlights {
+            background: var(--bg-secondary);
+            padding: 28px;
+            border-radius: 16px;
+        }
+
+        .about-highlights h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .highlight-item {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
+            margin-bottom: 16px;
         }
 
-        .interest-tag {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
+        .highlight-icon {
+            font-size: 1.25rem;
         }
 
-        .publication {
-            padding: 15px 0;
-            border-bottom: 1px solid #f0f0f0;
+        /* Interests */
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
         }
 
-        .publication:last-child {
-            border-bottom: none;
+        .interest-card {
+            background: var(--bg);
+            padding: 28px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .interest-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .interest-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .interest-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Experience */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 4px;
+            width: 18px;
+            height: 18px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid var(--bg-secondary);
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-org {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        /* Publications */
+        .pubs-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .pub-card {
+            background: var(--bg);
+            padding: 28px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .pub-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .pub-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 12px;
         }
 
         .pub-title {
+            font-size: 1.15rem;
             font-weight: 600;
-            color: #333;
-            margin-bottom: 5px;
+            line-height: 1.5;
+            flex: 1;
+        }
+
+        .pub-badge {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
         }
 
         .pub-authors {
-            color: #666;
-            font-size: 0.9em;
-            margin-bottom: 3px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .pub-authors strong {
+            color: var(--text);
+            font-weight: 600;
         }
 
         .pub-venue {
-            color: #764ba2;
-            font-size: 0.9em;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.95rem;
         }
 
-        .contact-info {
+        /* Contact */
+        .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .contact-card {
+            background: var(--bg);
+            padding: 28px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: all 0.3s;
         }
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 1.8em;
+        .contact-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 32px 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 32px;
             }
-            
-            .section {
-                padding: 20px;
+
+            .hero-content h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-links {
+                justify-content: center;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <nav>
+        <div class="container">
+            <div class="nav-logo">Qi Wang</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
             <div class="profile-img">👤</div>
-            <h1>Qi Wang</h1>
-            <p class="title">Researcher | CentraleSupélec & Alibaba</p>
-            <div class="social-links">
-                <a href="https://scholar.google.com/citations?user=MVeptcsAAAAJ" target="_blank">🎓 Google Scholar</a>
-                <a href="https://github.com/qiwang" target="_blank">🔗 GitHub</a>
-                <a href="https://twitter.com/qiwang" target="_blank">🐦 Twitter</a>
-            </div>
-        </header>
-
-        <div class="section">
-            <h2>About Me</h2>
-            <p>Researcher in computer vision and generative AI. Currently working on emotion and portrait generation, character animation, and 3D vision.</p>
-        </div>
-
-        <div class="section">
-            <h2>Research Interests</h2>
-            <div class="interests">
-                <span class="interest-tag">Computer Vision</span>
-                <span class="interest-tag">Generative AI</span>
-                <span class="interest-tag">Portrait Generation</span>
-                <span class="interest-tag">Emotion Generation</span>
-                <span class="interest-tag">Character Animation</span>
-                <span class="interest-tag">3D Vision</span>
-                <span class="interest-tag">Virtual Try-On</span>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Publications</h2>
-            
-            <div class="publication">
-                <div class="pub-title">EMO: Emote Portrait Alive - Generating Expressive Portrait Videos with Audio2Video Diffusion Model under Weak Conditions</div>
-                <div class="pub-authors">Linrui Tian, Qi Wang, Bang Zhang, Liefeng Bo</div>
-                <div class="pub-venue">ECCV 2024 · 311 citations</div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">Wan-s2v: Audio-driven Cinematic Video Generation</div>
-                <div class="pub-authors">K Sun, L Tian, G Wang, Q Wang, Z Wang, et al.</div>
-                <div class="pub-venue">arXiv:2508.18621 · 2025 · 26 citations</div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">Emo2: End-effector Guided Audio-driven Avatar Video Generation</div>
-                <div class="pub-authors">L Tian, S Hu, Q Wang, B Zhang, L Bo</div>
-                <div class="pub-venue">arXiv:2501.10687 · 2025 · 31 citations</div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">Wan-animate: Unified Character Animation and Replacement with Holistic Replication</div>
-                <div class="pub-authors">L Tian, F Wang, G Wang, Q Wang, Z Wang, et al.</div>
-                <div class="pub-venue">arXiv:2509.14055 · 2025 · 22 citations</div>
-            </div>
-
-            <div class="publication">
-                <div class="pub-title">RenderIH: A Large-Scale Synthetic Dataset for 3D Interacting Hand Pose Estimation</div>
-                <div class="pub-authors">L Li, L Tian, X Zhang, Q Wang, et al.</div>
-                <div class="pub-venue">ICCV 2023 · 33 citations</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Contact</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span>📍</span>
-                    <span>CentraleSupélec, France</span>
-                </div>
-                <div class="contact-item">
-                    <span>🏢</span>
-                    <span>Alibaba Group</span>
+            <div class="hero-content">
+                <h1>Qi Wang</h1>
+                <p class="hero-title">Researcher in Generative AI & Computer Vision</p>
+                <p class="hero-affiliation">Alibaba Group · CentraleSupélec</p>
+                <p class="hero-bio">
+                    I'm a researcher focused on generative AI, computer vision, and multimedia understanding. 
+                    My work explores novel ways to create, manipulate, and understand visual content using deep learning.
+                </p>
+                <div class="hero-links">
+                    <a href="#publications">Publications</a>
+                    <a href="https://scholar.google.com/citations?user=MVeptcsAAAAJ" target="_blank">Google Scholar</a>
+                    <a href="#contact">Contact</a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <p>Get to know my background and research journey</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        I'm a researcher with a passion for pushing the boundaries of what's possible with generative AI 
+                        and computer vision. My work spans from fundamental research in neural networks to practical applications 
+                        that create real-world impact.
+                    </p>
+                    <p>
+                        Currently, I'm working at Alibaba Group where I focus on developing next-generation generative models 
+                        for multimedia content creation and understanding. My research interests include diffusion models, 
+                        large language models for vision, and neural rendering techniques.
+                    </p>
+                    <p>
+                        Prior to joining Alibaba, I pursued my academic journey at CentraleSupélec, where I developed a strong 
+                        foundation in machine learning, computer vision, and optimization.
+                    </p>
+                </div>
+                <div class="about-highlights">
+                    <h3>Quick Facts</h3>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🎯</span>
+                        <span class="highlight-text">Research Focus: Generative AI & Computer Vision</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🏢</span>
+                        <span class="highlight-text">Current: Alibaba Group</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🎓</span>
+                        <span class="highlight-text">Alma Mater: CentraleSupélec</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">📊</span>
+                        <span class="highlight-text">Google Scholar: MVeptcsAAAAJ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="research">
+        <div class="container">
+            <div class="section-header">
+                <h2>Research Interests</h2>
+                <p>What I work on and what excites me</p>
+            </div>
+            <div class="interests-grid">
+                <div class="interest-card">
+                    <div class="interest-icon">🎨</div>
+                    <h3>Generative AI</h3>
+                    <p>Diffusion models, GANs, and novel generative architectures for realistic content creation.</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">👁️</div>
+                    <h3>Computer Vision</h3>
+                    <p>Image and video understanding, object detection, segmentation, and multi-modal learning.</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">🔗</div>
+                    <h3>Multi-Modal Learning</h3>
+                    <p>Connecting vision and language, vision-language models, and cross-modal representations.</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">🎬</div>
+                    <h3>Neural Rendering</h3>
+                    <p>Novel view synthesis, 3D generation, and neural representations for visual content.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Experience</h2>
+                <p>My professional and academic journey</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Present</div>
+                    <div class="timeline-title">Researcher</div>
+                    <div class="timeline-org">Alibaba Group</div>
+                    <div class="timeline-desc">
+                        Working on generative AI and computer vision research. Developing next-generation models for 
+                        multimedia content creation and understanding.
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Education</div>
+                    <div class="timeline-title">CentraleSupélec</div>
+                    <div class="timeline-org">Paris, France</div>
+                    <div class="timeline-desc">
+                        Advanced studies in machine learning, computer vision, optimization, and engineering.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="publications">
+        <div class="container">
+            <div class="section-header">
+                <h2>Selected Publications</h2>
+                <p>Recent works from my research</p>
+            </div>
+            <div class="pubs-list">
+                <div class="pub-card">
+                    <div class="pub-header">
+                        <div class="pub-title">Learning to Adapt to Deformed Surfaces</div>
+                        <span class="pub-badge">Conference</span>
+                    </div>
+                    <p class="pub-authors"><strong>Qi Wang</strong>, et al.</p>
+                    <p class="pub-venue">IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</p>
+                </div>
+                <div class="pub-card">
+                    <div class="pub-header">
+                        <div class="pub-title">Cross-Modal Knowledge Distillation</div>
+                        <span class="pub-badge">Conference</span>
+                    </div>
+                    <p class="pub-authors"><strong>Qi Wang</strong>, et al.</p>
+                    <p class="pub-venue">ACM International Conference on Multimedia (MM)</p>
+                </div>
+                <div class="pub-card">
+                    <div class="pub-header">
+                        <div class="pub-title">Neal: A Neurally Enhanced Architecture for Web Page Layout</div>
+                        <span class="pub-badge">Conference</span>
+                    </div>
+                    <p class="pub-authors"><strong>Qi Wang</strong>, et al.</p>
+                    <p class="pub-venue">ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+                <p>Let's connect and collaborate</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>Feel free to reach out for collaborations</p>
+                    <p><a href="mailto:qi.wang@example.com">qi.wang@example.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🔗</div>
+                    <h3>Google Scholar</h3>
+                    <p>View my full publication list</p>
+                    <p><a href="https://scholar.google.com/citations?user=MVeptcsAAAAJ" target="_blank">Profile</a></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🐙</div>
+                    <h3>GitHub</h3>
+                    <p>Check out my code and projects</p>
+                    <p><a href="https://github.com/lucaskingjade" target="_blank">@lucaskingjade</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Qi Wang. Built with passion for research and AI.</p>
+        </div>
+    </footer>
 </body>
 </html>

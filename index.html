@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qi Wang - Researcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .interest-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        .publication {
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .publication:last-child {
+            border-bottom: none;
+        }
+
+        .pub-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .pub-authors {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 3px;
+        }
+
+        .pub-venue {
+            color: #764ba2;
+            font-size: 0.9em;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-img">👤</div>
+            <h1>Qi Wang</h1>
+            <p class="title">Researcher | CentraleSupélec & Alibaba</p>
+            <div class="social-links">
+                <a href="https://scholar.google.com/citations?user=MVeptcsAAAAJ" target="_blank">🎓 Google Scholar</a>
+                <a href="https://github.com/qiwang" target="_blank">🔗 GitHub</a>
+                <a href="https://twitter.com/qiwang" target="_blank">🐦 Twitter</a>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2>About Me</h2>
+            <p>Researcher in computer vision and generative AI. Currently working on emotion and portrait generation, character animation, and 3D vision.</p>
+        </div>
+
+        <div class="section">
+            <h2>Research Interests</h2>
+            <div class="interests">
+                <span class="interest-tag">Computer Vision</span>
+                <span class="interest-tag">Generative AI</span>
+                <span class="interest-tag">Portrait Generation</span>
+                <span class="interest-tag">Emotion Generation</span>
+                <span class="interest-tag">Character Animation</span>
+                <span class="interest-tag">3D Vision</span>
+                <span class="interest-tag">Virtual Try-On</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Publications</h2>
+            
+            <div class="publication">
+                <div class="pub-title">EMO: Emote Portrait Alive - Generating Expressive Portrait Videos with Audio2Video Diffusion Model under Weak Conditions</div>
+                <div class="pub-authors">Linrui Tian, Qi Wang, Bang Zhang, Liefeng Bo</div>
+                <div class="pub-venue">ECCV 2024 · 311 citations</div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-title">Wan-s2v: Audio-driven Cinematic Video Generation</div>
+                <div class="pub-authors">K Sun, L Tian, G Wang, Q Wang, Z Wang, et al.</div>
+                <div class="pub-venue">arXiv:2508.18621 · 2025 · 26 citations</div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-title">Emo2: End-effector Guided Audio-driven Avatar Video Generation</div>
+                <div class="pub-authors">L Tian, S Hu, Q Wang, B Zhang, L Bo</div>
+                <div class="pub-venue">arXiv:2501.10687 · 2025 · 31 citations</div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-title">Wan-animate: Unified Character Animation and Replacement with Holistic Replication</div>
+                <div class="pub-authors">L Tian, F Wang, G Wang, Q Wang, Z Wang, et al.</div>
+                <div class="pub-venue">arXiv:2509.14055 · 2025 · 22 citations</div>
+            </div>
+
+            <div class="publication">
+                <div class="pub-title">RenderIH: A Large-Scale Synthetic Dataset for 3D Interacting Hand Pose Estimation</div>
+                <div class="pub-authors">L Li, L Tian, X Zhang, Q Wang, et al.</div>
+                <div class="pub-venue">ICCV 2023 · 33 citations</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>CentraleSupélec, France</span>
+                </div>
+                <div class="contact-item">
+                    <span>🏢</span>
+                    <span>Alibaba Group</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
